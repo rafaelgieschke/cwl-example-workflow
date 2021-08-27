@@ -1,0 +1,336 @@
+@prefix cwlprov: <https://w3id.org/cwl/prov#> .
+@prefix metadata: <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/metadata/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix wf: <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:uuid:45b925ca-8d56-4e73-afee-b23eb9508edc> a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:23.362885"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:wasAssociatedWith <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25> .
+
+<urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46#ore> prov:asInBundle metadata:directory-c750ada3-224a-4713-9a09-d4addd647d46.ttl ;
+    prov:mentionOf <urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> .
+
+wf:main a wfdesc:Workflow,
+        prov:Entity,
+        prov:Plan ;
+    rdfs:label "Prospective provenance"^^xsd:string ;
+    wfdesc:hasSubProcess <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5>,
+        <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json>,
+        <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom>,
+        <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/return_output_dir> .
+
+<arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/return_output_dir> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<urn:hash::sha1:188fb7ed7512beb80816828a3f9bc7c29a08d6df> a wfprov:Artifact,
+        prov:Entity .
+
+<urn:hash::sha1:2f50195d75849f948c9bb847aa7c4035af597b12> a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "OTU table"^^xsd:string .
+
+<urn:hash::sha1:3e1b6135980446d7a0bfd3085a927089443c7a3f> a wfprov:Artifact,
+        prov:Entity .
+
+<urn:hash::sha1:5d177cb704d5851df66e39cc733097118b0c060b> a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "returnDir"^^xsd:string .
+
+<urn:hash::sha1:7302202daf70a4dc5ed256091873e2194a167a9e> a wfprov:Artifact,
+        prov:Entity .
+
+<urn:hash::sha1:9ec6e472a9e85f35c821f69af9b7de998b965fcc> a wfprov:Artifact,
+        prov:Entity .
+
+<urn:hash::sha1:a94a8fe5ccb19ba61c4c0873d391e987982fbbd3> a wfprov:Artifact,
+        prov:Entity ;
+    prov:value "test"^^xsd:string .
+
+<urn:uuid:3efe9fad-c3f1-4bba-a2de-1b4c41c4ce10> a prov:Agent .
+
+<urn:uuid:42461539-adaa-4a40-8b38-591d0d345ca4> a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/counts_to_hdf5"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2021-08-27T13:07:23.354884"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:20.437332"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:20.446320"^^xsd:dateTime ;
+            prov:entity <urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/biom> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:20.447320"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/tsv> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:20.447320"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/header_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:20.447320"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/json> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:20.446320"^^xsd:dateTime ;
+            prov:entity <urn:uuid:bd2ee151-3723-47f7-9f7e-582dd5b50c21> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/hdf5> ] ;
+    prov:wasAssociatedWith <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25>,
+        <urn:uuid:a313ecda-e7be-4a95-b256-9324492eef11> .
+
+<urn:uuid:5634c3bf-523a-4d71-862c-cae4e7b6f7c4> a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/counts_to_json"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2021-08-27T13:07:20.030224"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:17.927574"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.225755"^^xsd:dateTime ;
+            prov:entity <urn:hash::sha1:2f50195d75849f948c9bb847aa7c4035af597b12> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/table_type> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.225755"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/tsv> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.225755"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/hdf5> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.225755"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/header_key> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.224756"^^xsd:dateTime ;
+            prov:entity <urn:uuid:b8b71694-b3ba-4823-8951-50d9bf76dca0> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/json> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:18.224756"^^xsd:dateTime ;
+            prov:entity <urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/biom> ] ;
+    prov:wasAssociatedWith <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25>,
+        <urn:uuid:f4cf8df2-4a39-4f42-8bd6-bdc5eaa5b64d> .
+
+<urn:uuid:a313ecda-e7be-4a95-b256-9324492eef11> a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image quay.io/biocontainers/biom-format:2.1.6--py36_0"^^xsd:string ;
+    cwlprov:image "quay.io/biocontainers/biom-format:2.1.6--py36_0"^^xsd:string .
+
+<urn:uuid:b8b71694-b3ba-4823-8951-50d9bf76dca0> a prov:Entity ;
+    prov:value true .
+
+<urn:uuid:bd2ee151-3723-47f7-9f7e-582dd5b50c21> a prov:Entity ;
+    prov:value true .
+
+<urn:uuid:e7fda3c4-deee-4c37-9002-c66e477ac777> a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image aeolic/mapseq2biom:latest"^^xsd:string ;
+    cwlprov:image "aeolic/mapseq2biom:latest"^^xsd:string .
+
+<urn:uuid:f4cf8df2-4a39-4f42-8bd6-bdc5eaa5b64d> a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Container execution of image quay.io/biocontainers/biom-format:2.1.6--py36_0"^^xsd:string ;
+    cwlprov:image "quay.io/biocontainers/biom-format:2.1.6--py36_0"^^xsd:string .
+
+<arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom> a wfdesc:Process,
+        prov:Entity,
+        prov:Plan .
+
+<urn:uuid:2143ede1-d033-422d-bc2b-4cc7a0da1b49> a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "test-mapseq.txt"^^xsd:string ;
+    ore:proxyFor <urn:uuid:875b9b3d-56b8-4f19-8f89-4787227c2fcb> ;
+    ore:proxyIn <urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> ;
+    prov:pairEntity <urn:uuid:875b9b3d-56b8-4f19-8f89-4787227c2fcb> ;
+    prov:pairKey "test-mapseq.txt"^^xsd:string .
+
+<urn:uuid:3c19a20b-4a26-4e44-9c00-dbf7e04842a6> a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "test-mapseq.tsv"^^xsd:string ;
+    ore:proxyFor <urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> ;
+    ore:proxyIn <urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> ;
+    prov:pairEntity <urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> ;
+    prov:pairKey "test-mapseq.tsv"^^xsd:string .
+
+<urn:uuid:b90235f3-4cb1-4e53-8a79-05da8b632bbb> a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "_json.biom"^^xsd:string ;
+    ore:proxyFor <urn:uuid:366dcace-9480-4c3d-b86e-5b3660b0fec1> ;
+    ore:proxyIn <urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> ;
+    prov:pairEntity <urn:uuid:366dcace-9480-4c3d-b86e-5b3660b0fec1> ;
+    prov:pairKey "_json.biom"^^xsd:string .
+
+<urn:uuid:ffe4aa20-4998-41f0-88de-24e90c0139d4> a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity,
+        prov:KeyEntityPair ;
+    ro:entryName "_hdf5.biom"^^xsd:string ;
+    ore:proxyFor <urn:uuid:7302aa9e-fdcf-471f-99fc-641c7fbe2e16> ;
+    ore:proxyIn <urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> ;
+    prov:pairEntity <urn:uuid:7302aa9e-fdcf-471f-99fc-641c7fbe2e16> ;
+    prov:pairKey "_hdf5.biom"^^xsd:string .
+
+<urn:uuid:04bfbb6c-99f1-44a7-92db-b307e23a0547> a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main/mapseq2biom"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom> ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2021-08-27T13:07:17.590170"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:15.807691"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:16.445588"^^xsd:dateTime ;
+            prov:entity cwlprov:None ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom/taxid_flag> ] ;
+    prov:wasAssociatedWith <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25>,
+        <urn:uuid:e7fda3c4-deee-4c37-9002-c66e477ac777> .
+
+<urn:uuid:366dcace-9480-4c3d-b86e-5b3660b0fec1> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:5634c3bf-523a-4d71-862c-cae4e7b6f7c4> ;
+            prov:atTime "2021-08-27T13:07:20.030224"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_json/result> ] ;
+    prov:specializationOf <urn:hash::sha1:3e1b6135980446d7a0bfd3085a927089443c7a3f> ;
+    cwlprov:basename "_json.biom"^^xsd:string ;
+    cwlprov:nameext ".biom"^^xsd:string ;
+    cwlprov:nameroot "_json"^^xsd:string .
+
+<urn:uuid:7302aa9e-fdcf-471f-99fc-641c7fbe2e16> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:42461539-adaa-4a40-8b38-591d0d345ca4> ;
+            prov:atTime "2021-08-27T13:07:23.354884"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/counts_to_hdf5/result> ] ;
+    prov:specializationOf <urn:hash::sha1:9ec6e472a9e85f35c821f69af9b7de998b965fcc> ;
+    cwlprov:basename "_hdf5.biom"^^xsd:string ;
+    cwlprov:nameext ".biom"^^xsd:string ;
+    cwlprov:nameroot "_hdf5"^^xsd:string .
+
+<urn:uuid:875b9b3d-56b8-4f19-8f89-4787227c2fcb> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:04bfbb6c-99f1-44a7-92db-b307e23a0547> ;
+            prov:atTime "2021-08-27T13:07:17.590170"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom/otu_txt> ] ;
+    prov:specializationOf <urn:hash::sha1:7302202daf70a4dc5ed256091873e2194a167a9e> ;
+    cwlprov:basename "test-mapseq.txt"^^xsd:string ;
+    cwlprov:nameext ".txt"^^xsd:string ;
+    cwlprov:nameroot "test-mapseq"^^xsd:string .
+
+<urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46> a ro:Folder,
+        wfprov:Artifact,
+        ore:Aggregation,
+        prov:Collection,
+        prov:Dictionary,
+        prov:Entity ;
+    ore:aggregates <urn:uuid:2143ede1-d033-422d-bc2b-4cc7a0da1b49>,
+        <urn:uuid:3c19a20b-4a26-4e44-9c00-dbf7e04842a6>,
+        <urn:uuid:b90235f3-4cb1-4e53-8a79-05da8b632bbb>,
+        <urn:uuid:ffe4aa20-4998-41f0-88de-24e90c0139d4> ;
+    ore:isDescribedBy metadata:directory-c750ada3-224a-4713-9a09-d4addd647d46.ttl ;
+    prov:hadDictionaryMember <urn:uuid:2143ede1-d033-422d-bc2b-4cc7a0da1b49>,
+        <urn:uuid:3c19a20b-4a26-4e44-9c00-dbf7e04842a6>,
+        <urn:uuid:b90235f3-4cb1-4e53-8a79-05da8b632bbb>,
+        <urn:uuid:ffe4aa20-4998-41f0-88de-24e90c0139d4> ;
+    prov:hadMember <urn:uuid:366dcace-9480-4c3d-b86e-5b3660b0fec1>,
+        <urn:uuid:7302aa9e-fdcf-471f-99fc-641c7fbe2e16>,
+        <urn:uuid:875b9b3d-56b8-4f19-8f89-4787227c2fcb>,
+        <urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> ;
+            prov:atTime "2021-08-27T13:07:23.755317"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/primary/out_dir> ] .
+
+<urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:04bfbb6c-99f1-44a7-92db-b307e23a0547> ;
+            prov:atTime "2021-08-27T13:07:17.590170"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom/otu_tsv> ] ;
+    prov:specializationOf <urn:hash::sha1:188fb7ed7512beb80816828a3f9bc7c29a08d6df> ;
+    cwlprov:basename "test-mapseq.tsv"^^xsd:string ;
+    cwlprov:nameext ".tsv"^^xsd:string ;
+    cwlprov:nameroot "test-mapseq"^^xsd:string .
+
+cwlprov:None a prov:Entity ;
+    rdfs:label "None"^^xsd:string ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity <urn:uuid:04bfbb6c-99f1-44a7-92db-b307e23a0547> ;
+            prov:atTime "2021-08-27T13:07:17.590170"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/mapseq2biom/otu_tsv_notaxid> ] .
+
+<urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25> a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "cwltool 3.0.20210124104916"^^xsd:string ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:05.561499"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3efe9fad-c3f1-4bba-a2de-1b4c41c4ce10> ] .
+
+<urn:uuid:3d50c7c2-3c48-419d-99b3-017913599cad> a wfprov:WorkflowRun,
+        prov:Activity ;
+    rdfs:label "Run of workflow/packed.cwl#main"^^xsd:string ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:hadPlan wf:main ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2021-08-27T13:07:23.772824"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2021-08-27T13:07:05.561499"^^xsd:dateTime ;
+            prov:hadActivity <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25> ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:15.803690"^^xsd:dateTime ;
+            prov:entity <urn:hash::sha1:5d177cb704d5851df66e39cc733097118b0c060b> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/return_dirname> ],
+        [ a prov:Usage ;
+            prov:atTime "2021-08-27T13:07:15.798010"^^xsd:dateTime ;
+            prov:entity <urn:hash::sha1:a94a8fe5ccb19ba61c4c0873d391e987982fbbd3> ;
+            prov:hadRole <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#main/map_label> ] ;
+    prov:startedAtTime "2021-08-27T13:07:05.561499"^^xsd:dateTime ;
+    prov:wasAssociatedWith <urn:uuid:3976a2b5-5d3e-495b-aeff-15438cf66c25> .
+

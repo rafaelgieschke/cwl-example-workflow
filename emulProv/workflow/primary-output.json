@@ -1,0 +1,55 @@
+{
+    "out_dir": {
+        "class": "Directory",
+        "basename": "returnDir",
+        "listing": [
+            {
+                "location": "../data/18/188fb7ed7512beb80816828a3f9bc7c29a08d6df",
+                "basename": "test-mapseq.tsv",
+                "nameroot": "test-mapseq",
+                "nameext": ".tsv",
+                "class": "File",
+                "checksum": "sha1$188fb7ed7512beb80816828a3f9bc7c29a08d6df",
+                "size": 4606,
+                "format": "http://edamontology.org/format_3746",
+                "http://commonwl.org/cwltool#generation": 0,
+                "@id": "urn:uuid:232ed08d-2b3f-4f7c-bb10-38076b44ea9d"
+            },
+            {
+                "location": "../data/73/7302202daf70a4dc5ed256091873e2194a167a9e",
+                "basename": "test-mapseq.txt",
+                "nameroot": "test-mapseq",
+                "nameext": ".txt",
+                "class": "File",
+                "checksum": "sha1$7302202daf70a4dc5ed256091873e2194a167a9e",
+                "size": 4341,
+                "format": "https://www.iana.org/assignments/media-types/text/tab-separated-values",
+                "http://commonwl.org/cwltool#generation": 0,
+                "@id": "urn:uuid:6879e9a9-cd4e-4fed-bdbd-2870ed0a6c75"
+            },
+            {
+                "location": "../data/3b/3b599a32fd5957356117a272c2b1e05c46a28870",
+                "basename": "_hdf5.biom",
+                "nameroot": "_hdf5",
+                "nameext": ".biom",
+                "class": "File",
+                "checksum": "sha1$3b599a32fd5957356117a272c2b1e05c46a28870",
+                "size": 37056,
+                "http://commonwl.org/cwltool#generation": 0,
+                "@id": "urn:uuid:f8992bdf-dd5a-4341-8c8d-34a288b08f58"
+            },
+            {
+                "location": "../data/dc/dcd2e126ead2cec3bd1a43b87ed8dba8de6f53bb",
+                "basename": "_json.biom",
+                "nameroot": "_json",
+                "nameext": ".biom",
+                "class": "File",
+                "checksum": "sha1$dcd2e126ead2cec3bd1a43b87ed8dba8de6f53bb",
+                "size": 6900,
+                "http://commonwl.org/cwltool#generation": 0,
+                "@id": "urn:uuid:8ff9bf91-8359-431f-809f-bac1355ebda0"
+            }
+        ],
+        "@id": "urn:uuid:d3efdd50-f3b0-4e5a-9388-a31c363a02fa"
+    }
+}

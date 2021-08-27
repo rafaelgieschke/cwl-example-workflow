@@ -1,0 +1,10 @@
+map_otu_table:
+  class: File
+  path: test-input/test-otu
+
+map_query:
+  class: File
+  path: test-input/test-mapseq
+map_label: 'test'
+
+return_dirname: returnDir

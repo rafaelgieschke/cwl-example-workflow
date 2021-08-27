@@ -1,0 +1,124 @@
+document
+  prefix wfprov <http://purl.org/wf4ever/wfprov#>
+  prefix wfdesc <http://purl.org/wf4ever/wfdesc#>
+  prefix cwlprov <https://w3id.org/cwl/prov#>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  prefix schema <http://schema.org/>
+  prefix orcid <https://orcid.org/>
+  prefix id <urn:uuid:>
+  prefix data <urn:hash::sha1:>
+  prefix sha256 <nih:sha-256;>
+  prefix researchobject <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/>
+  prefix metadata <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/metadata/>
+  prefix provenance <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/metadata/provenance/>
+  prefix wf <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/packed.cwl#>
+  prefix input <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/workflow/primary-job.json#>
+  prefix wf4ever <http://purl.org/wf4ever/wf4ever#>
+  prefix ro <http://purl.org/wf4ever/ro#>
+  prefix ore <http://www.openarchives.org/ore/terms/>
+  
+  agent(id:3efe9fad-c3f1-4bba-a2de-1b4c41c4ce10)
+  agent(id:3976a2b5-5d3e-495b-aeff-15438cf66c25, [prov:type='prov:SoftwareAgent', prov:type='wfprov:WorkflowEngine', prov:label="cwltool 3.0.20210124104916"])
+  wasStartedBy(id:3976a2b5-5d3e-495b-aeff-15438cf66c25, -, id:3efe9fad-c3f1-4bba-a2de-1b4c41c4ce10, 2021-08-27T13:07:05.561499)
+  activity(id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:05.561499, -, [prov:type='wfprov:WorkflowRun', prov:label="Run of workflow/packed.cwl#main"])
+  wasAssociatedWith(id:3d50c7c2-3c48-419d-99b3-017913599cad, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, wf:main)
+  wasStartedBy(id:3d50c7c2-3c48-419d-99b3-017913599cad, -, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, 2021-08-27T13:07:05.561499)
+  entity(wf:main, [prov:type='prov:Plan', prov:type='wfdesc:Workflow', prov:label="Prospective provenance"])
+  entity(wf:main/mapseq2biom, [prov:type='prov:Plan', prov:type='wfdesc:Process'])
+  entity(wf:main, [wfdesc:hasSubProcess='wf:main/mapseq2biom', prov:label="Prospective provenance"])
+  entity(wf:main/counts_to_json, [prov:type='prov:Plan', prov:type='wfdesc:Process'])
+  entity(wf:main, [wfdesc:hasSubProcess='wf:main/counts_to_json', prov:label="Prospective provenance"])
+  entity(wf:main/return_output_dir, [prov:type='prov:Plan', prov:type='wfdesc:Process'])
+  entity(wf:main, [wfdesc:hasSubProcess='wf:main/return_output_dir', prov:label="Prospective provenance"])
+  entity(wf:main/counts_to_hdf5, [prov:type='prov:Plan', prov:type='wfdesc:Process'])
+  entity(wf:main, [wfdesc:hasSubProcess='wf:main/counts_to_hdf5', prov:label="Prospective provenance"])
+  entity(data:a94a8fe5ccb19ba61c4c0873d391e987982fbbd3, [prov:type='wfprov:Artifact', prov:value="test"])
+  used(id:3d50c7c2-3c48-419d-99b3-017913599cad, data:a94a8fe5ccb19ba61c4c0873d391e987982fbbd3, 2021-08-27T13:07:15.798010, [prov:role='wf:main/map_label'])
+  entity(data:5d177cb704d5851df66e39cc733097118b0c060b, [prov:type='wfprov:Artifact', prov:value="returnDir"])
+  used(id:3d50c7c2-3c48-419d-99b3-017913599cad, data:5d177cb704d5851df66e39cc733097118b0c060b, 2021-08-27T13:07:15.803690, [prov:role='wf:main/return_dirname'])
+  activity(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, -, -, [prov:type='wfprov:ProcessRun', prov:label="Run of workflow/packed.cwl#main/mapseq2biom"])
+  wasAssociatedWith(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, wf:main/mapseq2biom)
+  wasStartedBy(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:15.807691)
+  agent(id:e7fda3c4-deee-4c37-9002-c66e477ac777, [prov:type='prov:SoftwareAgent', cwlprov:image="aeolic/mapseq2biom:latest", prov:label="Container execution of image aeolic/mapseq2biom:latest"])
+  wasAssociatedWith(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, id:e7fda3c4-deee-4c37-9002-c66e477ac777, -)
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, cwlprov:None, 2021-08-27T13:07:16.445588, [prov:role='wf:main/mapseq2biom/taxid_flag'])
+  entity(data:188fb7ed7512beb80816828a3f9bc7c29a08d6df, [prov:type='wfprov:Artifact'])
+  entity(id:f2cb144b-4241-4607-9656-f6a67bb6245c, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="test-mapseq.tsv", cwlprov:nameroot="test-mapseq", cwlprov:nameext=".tsv"])
+  specializationOf(id:f2cb144b-4241-4607-9656-f6a67bb6245c, data:188fb7ed7512beb80816828a3f9bc7c29a08d6df)
+  wasGeneratedBy(id:f2cb144b-4241-4607-9656-f6a67bb6245c, id:04bfbb6c-99f1-44a7-92db-b307e23a0547, 2021-08-27T13:07:17.590170, [prov:role='wf:main/mapseq2biom/otu_tsv'])
+  entity(cwlprov:None, [prov:label="None"])
+  wasGeneratedBy(cwlprov:None, id:04bfbb6c-99f1-44a7-92db-b307e23a0547, 2021-08-27T13:07:17.590170, [prov:role='wf:main/mapseq2biom/otu_tsv_notaxid'])
+  entity(data:7302202daf70a4dc5ed256091873e2194a167a9e, [prov:type='wfprov:Artifact'])
+  entity(id:875b9b3d-56b8-4f19-8f89-4787227c2fcb, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="test-mapseq.txt", cwlprov:nameroot="test-mapseq", cwlprov:nameext=".txt"])
+  specializationOf(id:875b9b3d-56b8-4f19-8f89-4787227c2fcb, data:7302202daf70a4dc5ed256091873e2194a167a9e)
+  wasGeneratedBy(id:875b9b3d-56b8-4f19-8f89-4787227c2fcb, id:04bfbb6c-99f1-44a7-92db-b307e23a0547, 2021-08-27T13:07:17.590170, [prov:role='wf:main/mapseq2biom/otu_txt'])
+  wasEndedBy(id:04bfbb6c-99f1-44a7-92db-b307e23a0547, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:17.590170)
+  activity(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, -, -, [prov:type='wfprov:ProcessRun', prov:label="Run of workflow/packed.cwl#main/counts_to_json"])
+  wasAssociatedWith(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, wf:main/counts_to_json)
+  wasStartedBy(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:17.927574)
+  agent(id:f4cf8df2-4a39-4f42-8bd6-bdc5eaa5b64d, [prov:type='prov:SoftwareAgent', cwlprov:image="quay.io/biocontainers/biom-format:2.1.6--py36_0", prov:label="Container execution of image quay.io/biocontainers/biom-format:2.1.6--py36_0"])
+  wasAssociatedWith(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, id:f4cf8df2-4a39-4f42-8bd6-bdc5eaa5b64d, -)
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, id:f2cb144b-4241-4607-9656-f6a67bb6245c, 2021-08-27T13:07:18.224756, [prov:role='wf:main/counts_to_json/biom'])
+  entity(id:b8b71694-b3ba-4823-8951-50d9bf76dca0, [prov:value="1" %% xsd:boolean])
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, id:b8b71694-b3ba-4823-8951-50d9bf76dca0, 2021-08-27T13:07:18.224756, [prov:role='wf:main/counts_to_json/json'])
+  entity(data:2f50195d75849f948c9bb847aa7c4035af597b12, [prov:type='wfprov:Artifact', prov:value="OTU table"])
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, data:2f50195d75849f948c9bb847aa7c4035af597b12, 2021-08-27T13:07:18.225755, [prov:role='wf:main/counts_to_json/table_type'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, cwlprov:None, 2021-08-27T13:07:18.225755, [prov:role='wf:main/counts_to_json/hdf5'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, cwlprov:None, 2021-08-27T13:07:18.225755, [prov:role='wf:main/counts_to_json/header_key'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, cwlprov:None, 2021-08-27T13:07:18.225755, [prov:role='wf:main/counts_to_json/tsv'])
+  entity(data:3e1b6135980446d7a0bfd3085a927089443c7a3f, [prov:type='wfprov:Artifact'])
+  entity(id:366dcace-9480-4c3d-b86e-5b3660b0fec1, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="_json.biom", cwlprov:nameroot="_json", cwlprov:nameext=".biom"])
+  specializationOf(id:366dcace-9480-4c3d-b86e-5b3660b0fec1, data:3e1b6135980446d7a0bfd3085a927089443c7a3f)
+  wasGeneratedBy(id:366dcace-9480-4c3d-b86e-5b3660b0fec1, id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, 2021-08-27T13:07:20.030224, [prov:role='wf:main/counts_to_json/result'])
+  wasEndedBy(id:5634c3bf-523a-4d71-862c-cae4e7b6f7c4, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:20.030224)
+  activity(id:42461539-adaa-4a40-8b38-591d0d345ca4, -, -, [prov:type='wfprov:ProcessRun', prov:label="Run of workflow/packed.cwl#main/counts_to_hdf5"])
+  wasAssociatedWith(id:42461539-adaa-4a40-8b38-591d0d345ca4, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, wf:main/counts_to_hdf5)
+  wasStartedBy(id:42461539-adaa-4a40-8b38-591d0d345ca4, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:20.437332)
+  agent(id:a313ecda-e7be-4a95-b256-9324492eef11, [prov:type='prov:SoftwareAgent', cwlprov:image="quay.io/biocontainers/biom-format:2.1.6--py36_0", prov:label="Container execution of image quay.io/biocontainers/biom-format:2.1.6--py36_0"])
+  wasAssociatedWith(id:42461539-adaa-4a40-8b38-591d0d345ca4, id:a313ecda-e7be-4a95-b256-9324492eef11, -)
+  used(id:42461539-adaa-4a40-8b38-591d0d345ca4, id:f2cb144b-4241-4607-9656-f6a67bb6245c, 2021-08-27T13:07:20.446320, [prov:role='wf:main/counts_to_hdf5/biom'])
+  entity(id:bd2ee151-3723-47f7-9f7e-582dd5b50c21, [prov:value="1" %% xsd:boolean])
+  used(id:42461539-adaa-4a40-8b38-591d0d345ca4, id:bd2ee151-3723-47f7-9f7e-582dd5b50c21, 2021-08-27T13:07:20.446320, [prov:role='wf:main/counts_to_hdf5/hdf5'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:42461539-adaa-4a40-8b38-591d0d345ca4, cwlprov:None, 2021-08-27T13:07:20.447320, [prov:role='wf:main/counts_to_hdf5/header_key'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:42461539-adaa-4a40-8b38-591d0d345ca4, cwlprov:None, 2021-08-27T13:07:20.447320, [prov:role='wf:main/counts_to_hdf5/json'])
+  entity(cwlprov:None, [prov:label="None"])
+  used(id:42461539-adaa-4a40-8b38-591d0d345ca4, cwlprov:None, 2021-08-27T13:07:20.447320, [prov:role='wf:main/counts_to_hdf5/tsv'])
+  entity(data:9ec6e472a9e85f35c821f69af9b7de998b965fcc, [prov:type='wfprov:Artifact'])
+  entity(id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16, [prov:type='wfprov:Artifact', prov:type='wf4ever:File', cwlprov:basename="_hdf5.biom", cwlprov:nameroot="_hdf5", cwlprov:nameext=".biom"])
+  specializationOf(id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16, data:9ec6e472a9e85f35c821f69af9b7de998b965fcc)
+  wasGeneratedBy(id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16, id:42461539-adaa-4a40-8b38-591d0d345ca4, 2021-08-27T13:07:23.354884, [prov:role='wf:main/counts_to_hdf5/result'])
+  wasEndedBy(id:42461539-adaa-4a40-8b38-591d0d345ca4, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:23.354884)
+  activity(id:45b925ca-8d56-4e73-afee-b23eb9508edc, -, -, [prov:type='wfprov:ProcessRun', prov:label="Run of workflow/packed.cwl#main/"])
+  wasAssociatedWith(id:45b925ca-8d56-4e73-afee-b23eb9508edc, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, wf:main/)
+  wasStartedBy(id:45b925ca-8d56-4e73-afee-b23eb9508edc, -, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:23.362885)
+  entity(id:c750ada3-224a-4713-9a09-d4addd647d46, [prov:type='wfprov:Artifact', prov:type='prov:Collection', prov:type='prov:Dictionary', prov:type='ro:Folder', ore:isDescribedBy='metadata:directory-c750ada3-224a-4713-9a09-d4addd647d46.ttl', prov:hadDictionaryMember='id:ffe4aa20-4998-41f0-88de-24e90c0139d4', prov:hadDictionaryMember='id:b90235f3-4cb1-4e53-8a79-05da8b632bbb', prov:hadDictionaryMember='id:3c19a20b-4a26-4e44-9c00-dbf7e04842a6', prov:hadDictionaryMember='id:2143ede1-d033-422d-bc2b-4cc7a0da1b49'])
+  mentionOf(id:c750ada3-224a-4713-9a09-d4addd647d46#ore, id:c750ada3-224a-4713-9a09-d4addd647d46, metadata:directory-c750ada3-224a-4713-9a09-d4addd647d46.ttl)
+  hadMember(id:c750ada3-224a-4713-9a09-d4addd647d46, id:f2cb144b-4241-4607-9656-f6a67bb6245c)
+  entity(id:3c19a20b-4a26-4e44-9c00-dbf7e04842a6, [prov:type='prov:KeyEntityPair', prov:pairKey="test-mapseq.tsv", prov:pairEntity='id:f2cb144b-4241-4607-9656-f6a67bb6245c'])
+  hadMember(id:c750ada3-224a-4713-9a09-d4addd647d46, id:875b9b3d-56b8-4f19-8f89-4787227c2fcb)
+  entity(id:2143ede1-d033-422d-bc2b-4cc7a0da1b49, [prov:type='prov:KeyEntityPair', prov:pairKey="test-mapseq.txt", prov:pairEntity='id:875b9b3d-56b8-4f19-8f89-4787227c2fcb'])
+  hadMember(id:c750ada3-224a-4713-9a09-d4addd647d46, id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16)
+  entity(id:ffe4aa20-4998-41f0-88de-24e90c0139d4, [prov:type='prov:KeyEntityPair', prov:pairKey="_hdf5.biom", prov:pairEntity='id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16'])
+  hadMember(id:c750ada3-224a-4713-9a09-d4addd647d46, id:366dcace-9480-4c3d-b86e-5b3660b0fec1)
+  entity(id:b90235f3-4cb1-4e53-8a79-05da8b632bbb, [prov:type='prov:KeyEntityPair', prov:pairKey="_json.biom", prov:pairEntity='id:366dcace-9480-4c3d-b86e-5b3660b0fec1'])
+  wasGeneratedBy(id:c750ada3-224a-4713-9a09-d4addd647d46, id:3d50c7c2-3c48-419d-99b3-017913599cad, 2021-08-27T13:07:23.755317, [prov:role='wf:main/primary/out_dir'])
+  wasEndedBy(id:3d50c7c2-3c48-419d-99b3-017913599cad, -, id:3976a2b5-5d3e-495b-aeff-15438cf66c25, 2021-08-27T13:07:23.772824)
+  bundle metadata:directory-c750ada3-224a-4713-9a09-d4addd647d46.ttl
+    prefix ro <http://purl.org/wf4ever/ro#>
+    prefix ore <http://www.openarchives.org/ore/terms/>
+    prefix id <urn:uuid:>
+    prefix metadata <arcp://uuid,3d50c7c2-3c48-419d-99b3-017913599cad/metadata/>
+    
+    entity(id:c750ada3-224a-4713-9a09-d4addd647d46, [prov:type='ore:Aggregation', prov:type='ro:Folder', ore:aggregates='id:ffe4aa20-4998-41f0-88de-24e90c0139d4', ore:aggregates='id:b90235f3-4cb1-4e53-8a79-05da8b632bbb', ore:aggregates='id:3c19a20b-4a26-4e44-9c00-dbf7e04842a6', ore:aggregates='id:2143ede1-d033-422d-bc2b-4cc7a0da1b49'])
+    entity(id:3c19a20b-4a26-4e44-9c00-dbf7e04842a6, [prov:type='ro:FolderEntry', prov:type='ore:Proxy', ro:entryName="test-mapseq.tsv", ore:proxyIn='id:c750ada3-224a-4713-9a09-d4addd647d46', ore:proxyFor='id:f2cb144b-4241-4607-9656-f6a67bb6245c'])
+    entity(id:2143ede1-d033-422d-bc2b-4cc7a0da1b49, [prov:type='ro:FolderEntry', prov:type='ore:Proxy', ro:entryName="test-mapseq.txt", ore:proxyIn='id:c750ada3-224a-4713-9a09-d4addd647d46', ore:proxyFor='id:875b9b3d-56b8-4f19-8f89-4787227c2fcb'])
+    entity(id:ffe4aa20-4998-41f0-88de-24e90c0139d4, [prov:type='ro:FolderEntry', prov:type='ore:Proxy', ro:entryName="_hdf5.biom", ore:proxyIn='id:c750ada3-224a-4713-9a09-d4addd647d46', ore:proxyFor='id:7302aa9e-fdcf-471f-99fc-641c7fbe2e16'])
+    entity(id:b90235f3-4cb1-4e53-8a79-05da8b632bbb, [prov:type='ro:FolderEntry', prov:type='ore:Proxy', ro:entryName="_json.biom", ore:proxyIn='id:c750ada3-224a-4713-9a09-d4addd647d46', ore:proxyFor='id:366dcace-9480-4c3d-b86e-5b3660b0fec1'])
+  endBundle
+endDocument
