@@ -18,5 +18,5 @@
         "checksum": "sha1$d1638eb7c6f55236af0376dc1fbd5df929fc08fd"
     },
     "map_label": "test",
-    "return_dirname": "returnDir"
+    "return_dirname": "returnDirOriginal"
 }

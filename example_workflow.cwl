@@ -24,7 +24,7 @@ outputs:
 steps:
 
   mapseq2biom:
-    run: ../mapseq2biom/mapseq2biom.cwl
+    run: ./tools/mapseq2biom/mapseq2biom.cwl
     in:
        otu_table: map_otu_table
        label: map_label
@@ -32,7 +32,7 @@ steps:
     out: [ otu_tsv, otu_txt, otu_tsv_notaxid ]
 
   counts_to_hdf5:
-    run: ../biom-convert/biom-convert.cwl
+    run: ./tools/biom-convert/biom-convert.cwl
     in:
        biom: mapseq2biom/otu_tsv
        hdf5: { default: true }
@@ -40,7 +40,7 @@ steps:
     out: [ result ]
 
   counts_to_json:
-    run: ../biom-convert/biom-convert.cwl
+    run: ./tools/biom-convert/biom-convert.cwl
     in:
        biom: mapseq2biom/otu_tsv
        json: { default: true }
@@ -48,7 +48,7 @@ steps:
     out: [ result ]
 
   return_output_dir:
-    run: ../../../utils/return_directory.cwl
+    run: ./utils/return_directory.cwl
     in:
       dir_name: return_dirname
       file_list:

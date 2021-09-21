@@ -1,6 +1,144 @@
 {
     "$graph": [
         {
+            "class": "Workflow",
+            "requirements": [
+                {
+                    "class": "InlineJavascriptRequirement"
+                },
+                {
+                    "class": "MultipleInputFeatureRequirement"
+                },
+                {
+                    "class": "ScatterFeatureRequirement"
+                },
+                {
+                    "class": "StepInputExpressionRequirement"
+                },
+                {
+                    "class": "SubworkflowFeatureRequirement"
+                }
+            ],
+            "inputs": [
+                {
+                    "type": "string",
+                    "id": "#main/map_label"
+                },
+                {
+                    "type": "File",
+                    "id": "#main/map_otu_table"
+                },
+                {
+                    "type": "File",
+                    "id": "#main/map_query"
+                },
+                {
+                    "type": "string",
+                    "id": "#main/return_dirname"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": [
+                        "null",
+                        "Directory"
+                    ],
+                    "outputSource": "#main/return_output_dir/out",
+                    "id": "#main/out_dir"
+                }
+            ],
+            "steps": [
+                {
+                    "run": "#biom-convert.cwl",
+                    "in": [
+                        {
+                            "source": "#main/mapseq2biom/otu_tsv",
+                            "id": "#main/counts_to_hdf5/biom"
+                        },
+                        {
+                            "default": true,
+                            "id": "#main/counts_to_hdf5/hdf5"
+                        },
+                        {
+                            "default": "OTU table",
+                            "id": "#main/counts_to_hdf5/table_type"
+                        }
+                    ],
+                    "out": [
+                        "#main/counts_to_hdf5/result"
+                    ],
+                    "id": "#main/counts_to_hdf5"
+                },
+                {
+                    "run": "#biom-convert.cwl",
+                    "in": [
+                        {
+                            "source": "#main/mapseq2biom/otu_tsv",
+                            "id": "#main/counts_to_json/biom"
+                        },
+                        {
+                            "default": true,
+                            "id": "#main/counts_to_json/json"
+                        },
+                        {
+                            "default": "OTU table",
+                            "id": "#main/counts_to_json/table_type"
+                        }
+                    ],
+                    "out": [
+                        "#main/counts_to_json/result"
+                    ],
+                    "id": "#main/counts_to_json"
+                },
+                {
+                    "run": "#mapseq2biom.cwl",
+                    "in": [
+                        {
+                            "source": "#main/map_label",
+                            "id": "#main/mapseq2biom/label"
+                        },
+                        {
+                            "source": "#main/map_otu_table",
+                            "id": "#main/mapseq2biom/otu_table"
+                        },
+                        {
+                            "source": "#main/map_query",
+                            "id": "#main/mapseq2biom/query"
+                        }
+                    ],
+                    "out": [
+                        "#main/mapseq2biom/otu_tsv",
+                        "#main/mapseq2biom/otu_txt",
+                        "#main/mapseq2biom/otu_tsv_notaxid"
+                    ],
+                    "id": "#main/mapseq2biom"
+                },
+                {
+                    "run": "#return_directory.cwl",
+                    "in": [
+                        {
+                            "source": "#main/return_dirname",
+                            "id": "#main/return_output_dir/dir_name"
+                        },
+                        {
+                            "source": [
+                                "#main/mapseq2biom/otu_tsv",
+                                "#main/mapseq2biom/otu_txt",
+                                "#main/counts_to_hdf5/result",
+                                "#main/counts_to_json/result"
+                            ],
+                            "id": "#main/return_output_dir/file_list"
+                        }
+                    ],
+                    "out": [
+                        "#main/return_output_dir/out"
+                    ],
+                    "id": "#main/return_output_dir"
+                }
+            ],
+            "id": "#main"
+        },
+        {
             "class": "CommandLineTool",
             "requirements": [
                 {
@@ -210,144 +348,6 @@
             "id": "#mapseq2biom.cwl",
             "http://schema.org/license": "https://www.apache.org/licenses/LICENSE-2.0",
             "http://schema.org/copyrightHolder": "EMBL - European Bioinformatics Institute"
-        },
-        {
-            "class": "Workflow",
-            "requirements": [
-                {
-                    "class": "InlineJavascriptRequirement"
-                },
-                {
-                    "class": "MultipleInputFeatureRequirement"
-                },
-                {
-                    "class": "ScatterFeatureRequirement"
-                },
-                {
-                    "class": "StepInputExpressionRequirement"
-                },
-                {
-                    "class": "SubworkflowFeatureRequirement"
-                }
-            ],
-            "inputs": [
-                {
-                    "type": "string",
-                    "id": "#main/map_label"
-                },
-                {
-                    "type": "File",
-                    "id": "#main/map_otu_table"
-                },
-                {
-                    "type": "File",
-                    "id": "#main/map_query"
-                },
-                {
-                    "type": "string",
-                    "id": "#main/return_dirname"
-                }
-            ],
-            "outputs": [
-                {
-                    "type": [
-                        "null",
-                        "Directory"
-                    ],
-                    "outputSource": "#main/return_output_dir/out",
-                    "id": "#main/out_dir"
-                }
-            ],
-            "steps": [
-                {
-                    "run": "#biom-convert.cwl",
-                    "in": [
-                        {
-                            "source": "#main/mapseq2biom/otu_tsv",
-                            "id": "#main/counts_to_hdf5/biom"
-                        },
-                        {
-                            "default": true,
-                            "id": "#main/counts_to_hdf5/hdf5"
-                        },
-                        {
-                            "default": "OTU table",
-                            "id": "#main/counts_to_hdf5/table_type"
-                        }
-                    ],
-                    "out": [
-                        "#main/counts_to_hdf5/result"
-                    ],
-                    "id": "#main/counts_to_hdf5"
-                },
-                {
-                    "run": "#biom-convert.cwl",
-                    "in": [
-                        {
-                            "source": "#main/mapseq2biom/otu_tsv",
-                            "id": "#main/counts_to_json/biom"
-                        },
-                        {
-                            "default": true,
-                            "id": "#main/counts_to_json/json"
-                        },
-                        {
-                            "default": "OTU table",
-                            "id": "#main/counts_to_json/table_type"
-                        }
-                    ],
-                    "out": [
-                        "#main/counts_to_json/result"
-                    ],
-                    "id": "#main/counts_to_json"
-                },
-                {
-                    "run": "#mapseq2biom.cwl",
-                    "in": [
-                        {
-                            "source": "#main/map_label",
-                            "id": "#main/mapseq2biom/label"
-                        },
-                        {
-                            "source": "#main/map_otu_table",
-                            "id": "#main/mapseq2biom/otu_table"
-                        },
-                        {
-                            "source": "#main/map_query",
-                            "id": "#main/mapseq2biom/query"
-                        }
-                    ],
-                    "out": [
-                        "#main/mapseq2biom/otu_tsv",
-                        "#main/mapseq2biom/otu_txt",
-                        "#main/mapseq2biom/otu_tsv_notaxid"
-                    ],
-                    "id": "#main/mapseq2biom"
-                },
-                {
-                    "run": "#return_directory.cwl",
-                    "in": [
-                        {
-                            "source": "#main/return_dirname",
-                            "id": "#main/return_output_dir/dir_name"
-                        },
-                        {
-                            "source": [
-                                "#main/mapseq2biom/otu_tsv",
-                                "#main/mapseq2biom/otu_txt",
-                                "#main/counts_to_hdf5/result",
-                                "#main/counts_to_json/result"
-                            ],
-                            "id": "#main/return_output_dir/file_list"
-                        }
-                    ],
-                    "out": [
-                        "#main/return_output_dir/out"
-                    ],
-                    "id": "#main/return_output_dir"
-                }
-            ],
-            "id": "#main"
         },
         {
             "class": "ExpressionTool",

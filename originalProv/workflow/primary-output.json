@@ -1,7 +1,7 @@
 {
     "out_dir": {
         "class": "Directory",
-        "basename": "returnDir",
+        "basename": "returnDirOriginal",
         "listing": [
             {
                 "location": "../data/18/188fb7ed7512beb80816828a3f9bc7c29a08d6df",
@@ -13,7 +13,7 @@
                 "size": 4606,
                 "format": "http://edamontology.org/format_3746",
                 "http://commonwl.org/cwltool#generation": 0,
-                "@id": "urn:uuid:f2cb144b-4241-4607-9656-f6a67bb6245c"
+                "@id": "urn:uuid:36803874-20cf-4f43-b791-c78f92ec9629"
             },
             {
                 "location": "../data/73/7302202daf70a4dc5ed256091873e2194a167a9e",
@@ -25,31 +25,31 @@
                 "size": 4341,
                 "format": "https://www.iana.org/assignments/media-types/text/tab-separated-values",
                 "http://commonwl.org/cwltool#generation": 0,
-                "@id": "urn:uuid:875b9b3d-56b8-4f19-8f89-4787227c2fcb"
+                "@id": "urn:uuid:7bcc64da-877c-4441-9ef9-122aac66c643"
             },
             {
-                "location": "../data/9e/9ec6e472a9e85f35c821f69af9b7de998b965fcc",
+                "location": "../data/d2/d2587fc0f5fe097899d9b5615c418363f538195d",
                 "basename": "_hdf5.biom",
                 "nameroot": "_hdf5",
                 "nameext": ".biom",
                 "class": "File",
-                "checksum": "sha1$9ec6e472a9e85f35c821f69af9b7de998b965fcc",
+                "checksum": "sha1$d2587fc0f5fe097899d9b5615c418363f538195d",
                 "size": 37056,
                 "http://commonwl.org/cwltool#generation": 0,
-                "@id": "urn:uuid:7302aa9e-fdcf-471f-99fc-641c7fbe2e16"
+                "@id": "urn:uuid:88db8a5c-7c31-4873-ab70-327d9efdcd97"
             },
             {
-                "location": "../data/3e/3e1b6135980446d7a0bfd3085a927089443c7a3f",
+                "location": "../data/84/8465bb5207225b1ed34852a5303af5a28f0ec6dd",
                 "basename": "_json.biom",
                 "nameroot": "_json",
                 "nameext": ".biom",
                 "class": "File",
-                "checksum": "sha1$3e1b6135980446d7a0bfd3085a927089443c7a3f",
+                "checksum": "sha1$8465bb5207225b1ed34852a5303af5a28f0ec6dd",
                 "size": 6900,
                 "http://commonwl.org/cwltool#generation": 0,
-                "@id": "urn:uuid:366dcace-9480-4c3d-b86e-5b3660b0fec1"
+                "@id": "urn:uuid:796e3cf0-c5f8-4d10-82f8-7a05f29e6a6d"
             }
         ],
-        "@id": "urn:uuid:c750ada3-224a-4713-9a09-d4addd647d46"
+        "@id": "urn:uuid:c5dd2b7b-7fb8-4eb6-99e7-718d41084986"
     }
 }
