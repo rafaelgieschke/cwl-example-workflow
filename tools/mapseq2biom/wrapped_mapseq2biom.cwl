@@ -1,7 +1,6 @@
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "EMBL - European Bioinformatics Institute"
 class: CommandLineTool
-id: file:///F:/Thesis/ExampleWorkflow/tools/mapseq2biom/mapseq2biom.cwl
 inputs:
 - id: label
   label: label to add to the top of the outfile OTU table
@@ -46,21 +45,31 @@ outputs:
   format: https://www.iana.org/assignments/media-types/text/tab-separated-values
   type: File
 requirements:
+- class: EnvVarRequirement
+  envDef:
+  - envName: HELLO
+    envValue: /usr/bin:/var/
+  - envName: PATH
+    envValue: "/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 - class: ResourceRequirement
   coresMin: 2
   ramMin: 200
   tmpdirMin: 200
 - class: DockerRequirement
-  dockerPull: aeolic/cwl-wrapper:2.7.9
+  dockerPull: registry.gitlab.com/emulation-as-a-service/experiments/cwl-wrapper:latest
   dockerOutputDirectory: /app/output
 - class: InitialWorkDirRequirement
   listing:
   - entryname: config.json
     entry: |-
       {
-          "environmentId": "ba929bf1-a1e2-498c-bee3-187778f5ecf8",
-          "outputFolder": "/output",
-          "initialWorkDirRequirements": []
+          "environmentId": "ae026c83-4036-429d-9c1e-ceb9c9104347",
+          "initialWorkDirRequirements": [],
+          "eaasUrl": "https://a19b53c8-2990-43ef-8ccd-6353c370d056.test.emulation.cloud/emil",
+          "environmentVariables": {
+              "HELLO": "/usr/bin:/var/",
+              "PATH": "/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+          }
       }
 hints: []
 cwlVersion: v1.0

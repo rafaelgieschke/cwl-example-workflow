@@ -7,4 +7,4 @@ map_query:
   path: test-input/test-mapseq
 map_label: 'test'
 
-return_dirname: returnDir
+return_dirname: returnDirRewritten

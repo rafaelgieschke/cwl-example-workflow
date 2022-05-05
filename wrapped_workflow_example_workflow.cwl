@@ -1,5 +1,4 @@
 class: Workflow
-id: file:///F:/Thesis/ExampleWorkflow/example_workflow.cwl
 inputs:
 - id: map_label
   type: string
@@ -16,6 +15,10 @@ outputs:
   - 'null'
   - Directory
 requirements:
+- class: EnvVarRequirement
+  envDef:
+  - envName: HELLO
+    envValue: /usr/bin:/var/
 - class: InlineJavascriptRequirement
 - class: MultipleInputFeatureRequirement
 - class: ScatterFeatureRequirement
@@ -33,7 +36,7 @@ steps:
     default: 'OTU table'
   out:
   - result
-  run: F:/Thesis/ExampleWorkflow/tools/biom-convert/wrapped_biom-convert.cwl
+  run: tools/biom-convert/wrapped_biom-convert.cwl
 - id: counts_to_json
   in:
   - id: biom
@@ -44,7 +47,7 @@ steps:
     default: 'OTU table'
   out:
   - result
-  run: F:/Thesis/ExampleWorkflow/tools/biom-convert/wrapped_biom-convert.cwl
+  run: tools/biom-convert/wrapped_biom-convert.cwl
 - id: mapseq2biom
   in:
   - id: label
@@ -57,7 +60,7 @@ steps:
   - otu_tsv
   - otu_txt
   - otu_tsv_notaxid
-  run: F:/Thesis/ExampleWorkflow/tools/mapseq2biom/wrapped_mapseq2biom.cwl
+  run: tools/mapseq2biom/wrapped_mapseq2biom.cwl
 - id: return_output_dir
   in:
   - id: dir_name
@@ -70,4 +73,4 @@ steps:
     - counts_to_json/result
   out:
   - out
-  run: utils\return_directory.cwl
+  run: utils/return_directory.cwl

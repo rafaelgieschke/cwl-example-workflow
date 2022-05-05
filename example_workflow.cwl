@@ -9,6 +9,9 @@ requirements:
   InlineJavascriptRequirement: {}
   StepInputExpressionRequirement: {}
   ScatterFeatureRequirement: {}
+  EnvVarRequirement: 
+    envDef:
+      HELLO: /usr/bin:/var/
 
 inputs:
   map_otu_table: File

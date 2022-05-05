@@ -11,6 +11,10 @@ requirements:
     ramMin: 200
     tmpdirMin: 200
     coresMin: 2
+  EnvVarRequirement: 
+    envDef:
+      HELLO: /usr/bin:/var/
+      PATH: "/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 inputs:
   otu_table:

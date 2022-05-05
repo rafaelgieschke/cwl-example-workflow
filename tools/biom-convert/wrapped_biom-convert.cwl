@@ -1,7 +1,6 @@
 s:license: "https://www.apache.org/licenses/LICENSE-2.0"
 s:copyrightHolder: "EMBL - European Bioinformatics Institute"
 class: CommandLineTool
-id: file:///F:/Thesis/ExampleWorkflow/tools/biom-convert/biom-convert.cwl
 inputs:
 - id: biom
   format: http://edamontology.org/format_3746
@@ -66,16 +65,16 @@ requirements:
 - class: ResourceRequirement
   ramMin: 300
 - class: DockerRequirement
-  dockerPull: aeolic/cwl-wrapper:2.7.9
+  dockerPull: registry.gitlab.com/emulation-as-a-service/experiments/cwl-wrapper:latest
   dockerOutputDirectory: /app/output
 - class: InitialWorkDirRequirement
   listing:
   - entryname: config.json
     entry: |-
       {
-          "environmentId": "bda7ba41-aa69-445c-9da4-15f420cf57d9",
-          "outputFolder": "/output",
-          "initialWorkDirRequirements": []
+          "environmentId": "186b7744-b170-440c-adeb-85065576fadc",
+          "initialWorkDirRequirements": [],
+          "eaasUrl": "https://a19b53c8-2990-43ef-8ccd-6353c370d056.test.emulation.cloud/emil"
       }
 hints: []
 cwlVersion: v1.0
