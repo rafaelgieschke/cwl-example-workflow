@@ -1,8 +1,0 @@
-runs:
-  using: "composite"
-  steps:
-  - run: |
-      pip install cwl-utils GitPython
-      git clone https://github.com/emulation-as-a-service/cwl-rewriter
-      python cwl-rewriter/rewriter.py example_workflow.cwl --runtime-id ae66ff3a-a3ba-4151-ad2a-735503d1f3f0
-    shell: bash
