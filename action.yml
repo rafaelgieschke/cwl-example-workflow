@@ -1,4 +1,4 @@
 runs:
   using: "composite"
   steps:
-  - run: ls -la /
+  - run: ls -la

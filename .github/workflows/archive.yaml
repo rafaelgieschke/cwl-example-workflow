@@ -4,5 +4,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ls -laR /
+    - run: ls -laR
     - uses: ./
