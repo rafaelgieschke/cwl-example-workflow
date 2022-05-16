@@ -3,6 +3,8 @@ jobs:
   archive:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: ls -laR
-    - uses: ./
+      - uses: actions/checkout@v3
+      - run: ls -laR
+      - uses: ./
+    with:
+      runtimeId: ae66ff3a-a3ba-4151-ad2a-735503d1f3f0
