@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls -laR
       - uses: ./
         with:
+	  workflowPath: example_workflow.cwl
           runtimeId: ae66ff3a-a3ba-4151-ad2a-735503d1f3f0
